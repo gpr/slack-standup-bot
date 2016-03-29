@@ -41,6 +41,7 @@ gem 'state_machine', git: 'git://github.com/seuros/state_machine.git'
 
 gem 'delayed_job'
 gem 'delayed_job_active_record'
+gem 'daemons'
 
 gem 'annotate'
 
