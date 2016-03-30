@@ -1,0 +1,45 @@
+log4r_config:
+  pre_config:
+    custom_levels:
+    - DEBUG
+    - DEV0
+    - DEV1
+    - INFO
+    - WARN
+    - ERROR
+    - EXCEPTION
+    - FATAL
+  # define all loggers:
+  loggers:
+    - name          : rails
+      level         : INFO
+      trace         : 'false'
+      outputters    :
+      - railsfile
+    - name          : db
+      level         : INFO
+      trace         : 'false'
+      outputters    :
+      - railsfile
+    - name          : lib
+      level         : DEBUG
+      trace         : 'false'
+      outputters    :
+      - railsfile
+
+  # define all outputters (incl. formatters)
+  outputters:
+  - type: StdoutOutputter
+    name: console
+    formatter:
+      date_pattern: '%H:%M:%S.%L'
+      pattern     : '[%d][%5.5c][%5.5l] %m'
+      type        : PatternFormatter
+  - type: FileOutputter
+    name: railsfile
+    filename: "log/#{ENV}.log" # notice the file extension is needed!
+    trunc: false
+    formatter:
+      date_pattern: '%Y-%m-%d %H:%M:%S.%L %z'
+      pattern     : '[#{APPNAME}][%d][%5.5c][%5.5l]: %m'
+      type        : PatternFormatter

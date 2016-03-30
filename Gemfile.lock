@@ -142,6 +142,7 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
+    log4r (1.1.10)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -284,6 +285,7 @@ DEPENDENCIES
   byebug
   celluloid-io
   coffee-rails (~> 4.1.0)
+  daemons
   delayed_job
   delayed_job_active_record
   dotenv-rails
@@ -294,6 +296,7 @@ DEPENDENCIES
   hashie-forbidden_attributes
   jbuilder (~> 2.0)
   jquery-rails
+  log4r
   mailcatcher
   masonry-rails
   pg
